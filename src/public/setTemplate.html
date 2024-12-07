@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Play Drums in your Browser</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<div class="header">
+  
+  <!--This will be set as the background-->
+  <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 150 115" preserveAspectRatio="none" shape-rendering="auto">
+    <defs>
+      <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+    </defs>
+    <!--Four waves with different gradients-->
+    <g class="parallax">
+      <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255, 249, 184, 0.7)" />
+      <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255, 249, 184, 0.5)" />
+      <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255, 249, 184, 0.3)" />
+      <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(255, 249, 184)"/>
+    </g>
+  </svg>
+
+</div>
+<canvas id="menuContainer" class="cnvs">
+</canvas>
+<div class="context-menu" id="FiguresMenu">
+</div>
+<div class="context-menu" id="AssignMenu">
+</div>
+<div class="context-menu" id="AssignSound">
+</div>
+<footer>
+  <button class="btn bottom-large-button" type="button" onclick='onTemplateFinished()'>
+    <span class="btn_text">Play</span>
+  </button>
+</footer>
+  <input type='file' id='uploader' style='display:none;'>
+<script src="https://cdn.rawgit.com/localForage/localForage/4ce19202/dist/localforage.min.js"></script>
+<script src='resources/resourceCorrespondence.js'></script>
+<script src="contextMenu.js"></script>
+<script src="preparePlay.js"></script>
+    <script>
+        const context = new Context("FiguresMenu", "AssignMenu", "AssignSound", "menuContainer");
+    </script>
+</body>
+</html>

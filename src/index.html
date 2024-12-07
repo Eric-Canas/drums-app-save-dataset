@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Play Drums in your Browser</title>
+  <link rel="stylesheet" href="./public/style.css">
+</head>
+
+<body>
+<div class="header">
+  
+  <!--This will be set as the background-->
+  <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 150 115" preserveAspectRatio="none" shape-rendering="auto">
+    <defs>
+      <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+    </defs>
+    <!--Four waves with different gradients-->
+    <g class="parallax">
+      <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255, 249, 184, 0.7)" />
+      <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255, 249, 184, 0.5)" />
+      <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255, 249, 184, 0.3)" />
+      <use xlink:href="#gentle-wave" x="48" y="7" fill="rgba(255, 249, 184)"/>
+    </g>
+  </svg>
+
+  <!--It will be the content-->
+  <div class="buttons-div flex">
+    <button class="btn" type="button" onclick='location.href="public/playExperiment.html"'>
+      <span class="btn_text">Play</span>
+    </button>
+    <button class="btn" type="button" onclick='location.href="public/setTemplate.html"'>
+      <span class="btn_text">Set Template</span>
+    </button>
+  </div>
+</div>
+<script src="https://cdn.rawgit.com/localForage/localForage/4ce19202/dist/localforage.min.js"></script>
+<script src="public/preparePlay.js"></script>
+</body>
+</html>
